@@ -1,30 +1,39 @@
-import 'package:dark_theme/theme_provider.dart';
+import 'dart:io';
+
+import 'package:dark_theme/config/theme.dart';
+import 'package:dark_theme/screens/home_screen.dart';
+import 'package:dark_theme/state/theme_mode_state.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:path_provider/path_provider.dart';
 
-import 'home_screen.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final Directory themeDirectory = await getTemporaryDirectory();
+  await Hive.initFlutter(themeDirectory.toString());
+  await Hive.openBox('prefs');
 
-void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-      builder: (context, child) {
-        final themeProvider = Provider.of<ThemeProvider>(context);
-        return MaterialApp(
-          title: 'Flutter Demo',
-          themeMode: themeProvider.themeMode,
-          theme: MyTheme.lightTheme,
-          darkTheme: MyTheme.darkTheme,
-          home: const HomeScreen(),
-        );
-      },
+  Widget build(BuildContext context, WidgetRef ref) {
+    final ThemeModeState currentTheme = ref.watch(themeProvider);
+    return MaterialApp(
+      title: 'Flutter Theme',
+      themeMode: currentTheme.themeMode,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      debugShowCheckedModeBanner: false,
+      home: const HomeScreen(),
     );
   }
 }
