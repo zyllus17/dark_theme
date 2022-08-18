@@ -1,5 +1,7 @@
 import 'dart:io';
-import 'package:dark_theme/config/theme.dart';
+import 'package:dark_theme/themes/dark_theme.dart';
+import 'package:dark_theme/themes/light_theme.dart';
+import 'package:dark_theme/themes/theme.dart';
 import 'package:dark_theme/screens/home_screen.dart';
 import 'package:dark_theme/state/theme_mode.notifier.dart';
 import 'package:flutter/material.dart';
@@ -25,13 +27,15 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final ThemeModeState currentTheme = ref.watch(themeProvider);
+    final lightThemeData = ref.watch(lightThemeProvider);
+    final darkThemeData = ref.watch(darkThemeProvider);
+
     final currentThemeMode = ref.watch(themeProvider);
     return MaterialApp(
       title: 'Flutter Theme',
       themeMode: currentThemeMode.themeMode,
-      theme: lightTheme,
-      darkTheme: darkTheme,
+      theme: lightThemeData,
+      darkTheme: darkThemeData,
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
     );

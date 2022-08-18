@@ -41,7 +41,7 @@ class InfoCard extends StatelessWidget {
               content,
               style: textTheme.bodyMedium,
             ),
-            const Spacer(),
+            // const Spacer(),
             Icon(
               icon,
               size: 32,
