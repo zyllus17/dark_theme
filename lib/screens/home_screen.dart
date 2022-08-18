@@ -1,3 +1,4 @@
+import 'package:dark_theme/state/theme_mode.notifier.dart';
 import 'package:dark_theme/widgets/info_card.dart';
 import 'package:dark_theme/widgets/theme_card.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,9 @@ class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(themeProvider);
+    final notifier = ref.watch(themeProvider.notifier);
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
@@ -27,17 +31,17 @@ class HomeScreen extends ConsumerWidget {
               mainAxisSpacing: 8,
               childAspectRatio: 1.75 / 1,
               padding: EdgeInsets.zero,
-              children: const <ThemeCard>[
+              children: <ThemeCard>[
                 ThemeCard(
-                  mode: ThemeMode.system,
+                  onTap: () => notifier.setThemeMode(ThemeMode.system),
                   icon: Icons.settings_system_daydream,
                 ),
                 ThemeCard(
-                  mode: ThemeMode.light,
-                  icon: Icons.light_mode,
+                  onTap: () => notifier.setThemeMode(ThemeMode.light),
+                  icon: Icons.light,
                 ),
                 ThemeCard(
-                  mode: ThemeMode.dark,
+                  onTap: () => notifier.setThemeMode(ThemeMode.dark),
                   icon: Icons.dark_mode,
                 ),
               ],

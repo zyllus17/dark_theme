@@ -1,11 +1,10 @@
 import 'dart:io';
-
 import 'package:dark_theme/config/theme.dart';
 import 'package:dark_theme/screens/home_screen.dart';
-import 'package:dark_theme/state/theme_mode_state.dart';
+import 'package:dark_theme/state/theme_mode.notifier.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() async {
@@ -26,10 +25,11 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ThemeModeState currentTheme = ref.watch(themeProvider);
+    // final ThemeModeState currentTheme = ref.watch(themeProvider);
+    final currentThemeMode = ref.watch(themeProvider);
     return MaterialApp(
       title: 'Flutter Theme',
-      themeMode: currentTheme.themeMode,
+      themeMode: currentThemeMode.themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
