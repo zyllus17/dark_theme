@@ -1,9 +1,8 @@
 import 'dart:io';
+import 'package:dark_theme/theme_state/theme_mode.notifier.dart';
 import 'package:dark_theme/themes/dark_theme.dart';
 import 'package:dark_theme/themes/light_theme.dart';
-import 'package:dark_theme/themes/theme.dart';
 import 'package:dark_theme/screens/home_screen.dart';
-import 'package:dark_theme/state/theme_mode.notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

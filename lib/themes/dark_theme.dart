@@ -1,4 +1,4 @@
-import 'package:dark_theme/config/colors.dart';
+import 'package:dark_theme/constants/colors.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -20,7 +20,6 @@ final darkThemeProvider = Provider((ref) {
     colors: FlexSchemeColor.from(
       brightness: Brightness.dark,
       primary: AppColors.blue,
-      
 
       // secondary: AppColors.onyx,
       // primaryContainer: AppColors.onyx,
@@ -36,7 +35,6 @@ final darkThemeProvider = Provider((ref) {
     fontFamily: 'Roboto',
     displayColor: AppColors.white,
     bodyColor: AppColors.white,
-
   );
 
   final textTheme = fontFamily.copyWith(
@@ -52,7 +50,9 @@ final darkThemeProvider = Provider((ref) {
   );
 
   return darkTheme.copyWith(
-    elevatedButtonTheme: CustomElevatedButtonThemeData(darkTheme,),
+    elevatedButtonTheme: CustomElevatedButtonThemeData(
+      darkTheme,
+    ),
     outlinedButtonTheme: CustomOutlinedButtonThemeData(darkTheme),
     checkboxTheme: CustomCheckBoxThemeData(darkTheme),
   );

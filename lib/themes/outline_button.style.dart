@@ -1,5 +1,5 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
-import 'package:dark_theme/config/colors.dart';
+import 'package:dark_theme/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomOutlinedButtonThemeData extends OutlinedButtonThemeData {

@@ -1,4 +1,4 @@
-import 'package:dark_theme/config/colors.dart';
+import 'package:dark_theme/constants/colors.dart';
 import 'package:dark_theme/themes/check_box.style.dart';
 import 'package:dark_theme/themes/elevated_button.style.dart';
 import 'package:dark_theme/themes/outline_button.style.dart';
@@ -8,7 +8,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final lightThemeProvider = Provider((ref) {
   var _lightTheme = FlexThemeData.light(
-    
     appBarBackground: Colors.white,
     colors: FlexSchemeColor.from(
       brightness: Brightness.light,
