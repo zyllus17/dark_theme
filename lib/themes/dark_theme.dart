@@ -10,6 +10,7 @@ final darkThemeProvider = Provider((ref) {
   var darkTheme = FlexThemeData.dark(
     scaffoldBackground: AppColors.black,
     appBarBackground: AppColors.black,
+
     primary: AppColors.blue,
     // dialogBackground: AppColors.yellow,
     // onSecondary: AppColors.yellow,
@@ -20,6 +21,7 @@ final darkThemeProvider = Provider((ref) {
     colors: FlexSchemeColor.from(
       brightness: Brightness.dark,
       primary: AppColors.blue,
+      
 
       // secondary: AppColors.onyx,
       // primaryContainer: AppColors.onyx,
