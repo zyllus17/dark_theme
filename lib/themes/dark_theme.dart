@@ -14,14 +14,18 @@ final darkThemeProvider = Provider((ref) {
     // dialogBackground: AppColors.yellow,
     // onSecondary: AppColors.yellow,
     // primaryContainer: AppColors.gold,
-    surface: AppColors.onyx,
-    // colors: FlexSchemeColor.from(
-    //   brightness: Brightness.dark,
-    //   primary: AppColors.blue,
-    // secondary: AppColors.onyx,
-    // primaryContainer: AppColors.onyx,
-    // tertiary: AppColors.onyx,
-    // ),
+    // surface: AppColors.onyx,
+    background: Colors.transparent,
+
+    colors: FlexSchemeColor.from(
+      brightness: Brightness.dark,
+      primary: AppColors.blue,
+      
+
+      // secondary: AppColors.onyx,
+      // primaryContainer: AppColors.onyx,
+      // tertiary: AppColors.onyx,
+    ),
     subThemesData: const FlexSubThemesData(),
     useMaterial3: true,
     useMaterial3ErrorColors: true,
@@ -32,6 +36,7 @@ final darkThemeProvider = Provider((ref) {
     fontFamily: 'Roboto',
     displayColor: AppColors.white,
     bodyColor: AppColors.white,
+
   );
 
   final textTheme = fontFamily.copyWith(
@@ -47,7 +52,7 @@ final darkThemeProvider = Provider((ref) {
   );
 
   return darkTheme.copyWith(
-    elevatedButtonTheme: CustomElevatedButtonThemeData(darkTheme),
+    elevatedButtonTheme: CustomElevatedButtonThemeData(darkTheme,),
     outlinedButtonTheme: CustomOutlinedButtonThemeData(darkTheme),
     checkboxTheme: CustomCheckBoxThemeData(darkTheme),
   );

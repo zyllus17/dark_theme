@@ -1,4 +1,5 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
+import 'package:dark_theme/config/colors.dart';
 import 'package:flutter/material.dart';
 
 extension ThemeExtensions on ThemeData {
@@ -44,8 +45,9 @@ extension ThemeExtensions on ThemeData {
       );
 
   ButtonStyle? get bottomSheetElevatedButton => ElevatedButton.styleFrom(
-        primary: colorScheme.onPrimary,
-        onPrimary: primaryColor,
+        primary: AppColors.blue,
+        onPrimary: AppColors.white,
+        textStyle: textTheme.bodyMedium,
       ).copyWith();
 }
 

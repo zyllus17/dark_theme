@@ -123,7 +123,7 @@ class HomeScreen extends ConsumerWidget {
                     crossAxisCount: 3,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8,
-                    childAspectRatio: 1.75 / 1,
+                    childAspectRatio: 1.75,
                     padding: EdgeInsets.zero,
                     children: <ThemeCard>[
                       ThemeCard(
@@ -150,12 +150,9 @@ class HomeScreen extends ConsumerWidget {
                     crossAxisCount: 2,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8,
-                    childAspectRatio: 4 / 5.5,
+                    childAspectRatio: 1,
                     padding: EdgeInsets.zero,
                     children: const <InfoCard>[
-                      /// Example: it is good practice to put widgets in separate files.
-                      /// This way the screen files won't become too large and
-                      /// the code becomes more clear.
                       InfoCard(
                           title: 'Time',
                           content: 'Time is running out',
@@ -169,85 +166,86 @@ class HomeScreen extends ConsumerWidget {
                     ],
                   ),
                   CustomDivider(),
-                  Text(
-                    'Display Large',
-                    style: theme.displayLarge,
-                  ),
-                  Text(
-                    'Display Medium',
-                    style: theme.displayMedium,
-                  ),
-                  Text(
-                    'Display Small',
-                    style: theme.displaySmall,
-                  ),
-                  Text(
-                    'Headline Large',
-                    style: theme.headlineLarge,
-                  ),
-                  Text(
-                    'Hisplay Medium',
-                    style: theme.headlineMedium,
-                  ),
-                  Text(
-                    'Headline Small',
-                    style: theme.headlineSmall,
-                  ),
-                  Text(
-                    'Title Large',
-                    style: theme.titleLarge,
-                  ),
-                  Text(
-                    'Title Medium',
-                    style: theme.titleMedium,
-                  ),
-                  Text(
-                    'Title Small',
-                    style: theme.titleSmall,
-                  ),
-                  Text(
-                    'Label Large',
-                    style: theme.labelLarge,
-                  ),
-                  Text(
-                    'Label Medium',
-                    style: theme.labelMedium,
-                  ),
-                  Text(
-                    'Label Small',
-                    style: theme.labelSmall,
-                  ),
-                  Text(
-                    'Body Large',
-                    style: theme.bodyLarge,
-                  ),
-                  Text(
-                    'Body Medium',
-                    style: theme.bodyMedium,
-                  ),
-                  Text(
-                    'Body Small',
-                    style: theme.bodySmall,
-                  ),
-                  Text(
-                    'Note',
-                    style: theme.note,
-                  ),
-                  Text(
-                    'AppBarLarge',
-                    style: theme.appBarLarge,
-                  ),
-                  Text(
-                    'ListHeadingMedium',
-                    style: theme.listHeadingMedium,
-                  ),
-                  //TODO:Ask Krishna, Color is set to black
-                  Text(
-                    'ToolTextStyle',
-                    style: theme.toolTextStyle,
+                  Column(
+                    children: [
+                      Text('Display Large',
+                          style: theme.displayLarge!.copyWith(fontSize: 55)),
+                      Text(
+                        'Display Medium',
+                        style: theme.displayMedium,
+                      ),
+                      Text(
+                        'Display Small',
+                        style: theme.displaySmall,
+                      ),
+                      Text(
+                        'Headline Large',
+                        style: theme.headlineLarge,
+                      ),
+                      Text(
+                        'Hisplay Medium',
+                        style: theme.headlineMedium,
+                      ),
+                      Text(
+                        'Headline Small',
+                        style: theme.headlineSmall,
+                      ),
+                      Text(
+                        'Title Large',
+                        style: theme.titleLarge,
+                      ),
+                      Text(
+                        'Title Medium',
+                        style: theme.titleMedium,
+                      ),
+                      Text(
+                        'Title Small',
+                        style: theme.titleSmall,
+                      ),
+                      Text(
+                        'Label Large',
+                        style: theme.labelLarge,
+                      ),
+                      Text(
+                        'Label Medium',
+                        style: theme.labelMedium,
+                      ),
+                      Text(
+                        'Label Small',
+                        style: theme.labelSmall,
+                      ),
+                      Text(
+                        'Body Large',
+                        style: theme.bodyLarge,
+                      ),
+                      Text(
+                        'Body Medium',
+                        style: theme.bodyMedium,
+                      ),
+                      Text(
+                        'Body Small',
+                        style: theme.bodySmall,
+                      ),
+                      Text(
+                        'Note',
+                        style: theme.note,
+                      ),
+                      Text(
+                        'AppBarLarge',
+                        style: theme.appBarLarge,
+                      ),
+                      Text(
+                        'ListHeadingMedium',
+                        style: theme.listHeadingMedium,
+                      ),
+                      //TODO:Ask Krishna, Color is set to black
+                      Text(
+                        'ToolTextStyle',
+                        style: theme.toolTextStyle,
+                      ),
+                    ],
                   ),
                   CustomDivider(),
-
                   OutlinedButton(
                     style: theme.smallOutlineButton,
                     onPressed: () {},

@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final lightThemeProvider = Provider((ref) {
   var _lightTheme = FlexThemeData.light(
+    
     appBarBackground: Colors.white,
     colors: FlexSchemeColor.from(
       brightness: Brightness.light,
