@@ -1,4 +1,6 @@
+import 'package:dark_theme/constants/colors.dart';
 import 'package:dark_theme/extensions/theme_extensions.dart';
+import 'package:dark_theme/screens/toolkit_category_screen.ui.dart';
 import 'package:dark_theme/screens/toolkit_screen.ui.dart';
 import 'package:dark_theme/widgets/elevated_button.dart';
 import 'package:dark_theme/widgets/text_testing.dart';
@@ -25,7 +27,19 @@ class HomeScreen extends ConsumerWidget {
                 height: 16,
               ),
               const ThemeSwitch(),
-              ToolKitScreen(),
+              TextTesting(theme: theme),
+              // ToolKitCategory(),
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: theme.containerColor,
+                  boxShadow: [theme.boxShadow],
+                ),
+                child: Text('Hello'),
+              )
+              // ToolKitCategory(),
+              // TextTesting(theme: theme)
             ]),
           ),
         ),

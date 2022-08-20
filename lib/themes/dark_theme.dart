@@ -8,28 +8,56 @@ import 'package:dark_theme/themes/outline_button.style.dart';
 
 final darkThemeProvider = Provider((ref) {
   var darkTheme = FlexThemeData.dark(
-    scaffoldBackground: AppColors.black,
-    appBarBackground: AppColors.black,
-
     primary: AppColors.blue,
-    // dialogBackground: AppColors.yellow,
-    // onSecondary: AppColors.yellow,
-    // primaryContainer: AppColors.gold,
-    // surface: AppColors.onyx,
-    background: Colors.transparent,
 
-    colors: FlexSchemeColor.from(
-      brightness: Brightness.dark,
-      primary: AppColors.blue,
+    ///Color visible on Primary
+    onPrimary: AppColors.black,
+
+    ///Secondary color
+    secondary: AppColors.green,
+
+    ///Color on secondary
+    onSecondary: AppColors.white,
+
+    ///Color on error
+    error: AppColors.red,
+
+    /// A color that is clearly legible when drawn on [error] color.
+    onError: AppColors.onyx,
+
+    ///Background color for widgets
+    surface: AppColors.onyx,
+
+    /// A color that is clearly legible when written/drawn on [surface] color.
+    onSurface: AppColors.white,
+
+    /// A color that typically appears behind scrollable content.
+    background: AppColors.onyx,
+
+    /// A color that is clearly legible when drawn on [background] color.
+    onBackground: AppColors.white,
+
+    /// The color of the [Scaffold] background.
+    scaffoldBackground: AppColors.black,
+
+    /// The background color of Dialog elements.
+    dialogBackground: AppColors.onyx,
+
+    /// Background theme color for the [AppBar]
+    appBarBackground: AppColors.onyx,
+
+    /// A color that's clearly legible when drawn on [primaryContainer].
+    onPrimaryContainer: AppColors.white,
+
+    /// Themeing of widgets
+    subThemesData: const FlexSubThemesData(
       
-
-      // secondary: AppColors.onyx,
-      // primaryContainer: AppColors.onyx,
-      // tertiary: AppColors.onyx,
     ),
-    subThemesData: const FlexSubThemesData(),
+
     useMaterial3: true,
     useMaterial3ErrorColors: true,
+    //TODO:(Maruf)Change it to FontFamily.circularStd in HLP
+    fontFamily: 'Roboto',
   );
 
   final fontFamily = darkTheme.textTheme.apply(
@@ -49,6 +77,7 @@ final darkThemeProvider = Provider((ref) {
   darkTheme = darkTheme.copyWith(
     textTheme: textTheme,
     primaryTextTheme: textTheme,
+    shadowColor: AppColors.black,
   );
 
   return darkTheme.copyWith(

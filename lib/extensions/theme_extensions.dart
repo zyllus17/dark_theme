@@ -1,5 +1,7 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:dark_theme/constants/colors.dart';
+import 'package:dark_theme/theme_state/theme_mode.notifier.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 
 import 'package:flutter/material.dart';
 
@@ -32,7 +34,7 @@ extension ThemeExtensions on ThemeData {
         fontSize: 22,
       );
   TextStyle? get toolTextStyle => textTheme.titleLarge?.copyWith(
-        color: Colors.black54,
+        color: AppColors.gray,
         fontSize: 18,
         fontWeight: FontWeight.w600,
       );
@@ -50,6 +52,17 @@ extension ThemeExtensions on ThemeData {
         onPrimary: AppColors.white,
         textStyle: textTheme.bodyMedium,
       ).copyWith();
+}
+
+extension ThemeColor on ThemeData {
+  Color get containerColor => backgroundColor;
+  BoxShadow get boxShadow => BoxShadow(
+        color: Colors.grey.withOpacity(0.5),
+        //color of shadow
+        spreadRadius: 2,
+        blurRadius: 5,
+        offset: Offset(3, 2),
+      );
 }
 
 extension TextStyleExtensions on TextStyle {

@@ -44,6 +44,7 @@ dependencies:
   hive_flutter: ^1.1.0
   assorted_layout_widgets: ^6.1.1
   flex_color_scheme: ^5.1.0
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
